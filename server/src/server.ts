@@ -1,18 +1,17 @@
 import express from 'express';
+import routes from './routes';
+import path from 'path';
 
 const app = express();
 
-console.log('Server iniciado');
+app.use(express.json())
+app.use(routes);
 
+app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
-app.get('/users', (request, response) => {
+app.listen(3333, () => {
 
-    console.log('Listagem de usuários');
+    console.log('Server iniciado');
 
-    // JSON
-    response.json({message: 'Hello World'});
-    
-})
+});
 
-
-app.listen(3333);
