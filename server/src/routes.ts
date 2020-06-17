@@ -12,14 +12,14 @@ routes.get('/items', itemsController.index)
 
 routes.post('/points', pointsController.create)
 
-routes.get('/points/:id', pointsController.index)
+routes.get('/points', pointsController.index)
 
 routes.get('/points/:id', pointsController.show)
 
-routes.get('/', (request, response) => {
+/*routes.get('/', (request, response) => {
     return response.json({ message: 'Hello World' });
 
-})
+})*/
 
 // Service pattern
 // Repository Pattern
